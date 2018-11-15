@@ -28,31 +28,47 @@
 
   <body id="page-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Cactusmhi</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="navbar-toggler-right">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">Cactusmhi</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
+  </div>
+
+  <div class="collapse navbar-collapse flex-column" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              <a href="#" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <form class="form-inline ">
+              <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+              <a href="#" id="search"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </form>
+            </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">New Arrival</a>
+              <a class="nav-link js-scroll-trigger" href="#services">Story</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#">Plant Care</a>
             </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Connect</a>
+            </li>
+    </ul>
+
+  </div>
+
+</nav>
+    
 
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
@@ -72,7 +88,7 @@
       </div>
     </header>
 
-    <section class="bg-primary" id="about">
+  <!--  <section class="bg-primary" id="about">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
@@ -83,7 +99,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section id="services">
       <div class="container">
@@ -224,7 +240,7 @@
       </div>
     </section>
 
-    <section id="contact">
+ <!--   <section id="contact">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
@@ -246,7 +262,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

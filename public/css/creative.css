@@ -24,6 +24,24 @@ hr.light {
   border-color: #fff;
 }
 
+
+#cart {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+#cart:hover {
+  color: black;
+}
+
+#search {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#search:hover {
+  color: black;
+}
+
 hr.green {
   border-color: #525a4a;
 }
