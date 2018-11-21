@@ -40,12 +40,17 @@
   <div class="collapse navbar-collapse flex-column" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="#" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+              <a class="nav-link js-scroll-trigger" href="login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#" id="search"><i class="fa fa-search" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
             <form class="form-inline ">
-              <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
-              <a href="#" id="search"><i class="fa fa-search" aria-hidden="true"></i></a>
+              <input class="form-control transparent-input form-control-sm mr-3" type="text" placeholder="Search" aria-label="Search">
             </form>
             </li>
     </ul>
@@ -55,7 +60,7 @@
               <a class="nav-link js-scroll-trigger" href="#">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Story</a>
+              <a class="nav-link js-scroll-trigger" href="#">Story</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#">Plant Care</a>
@@ -114,21 +119,21 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
+              <i class="fas fa-4x fa-graduation-cap text-primary mb-3 sr-icon-1"></i>
               <h3 class="mb-3">Gift for Graduation</h3>
               <p class="text-muted mb-0">There will be description here.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
+              <i class="fas fa-4x fa-birthday-cake text-primary mb-3 sr-icon-2"></i>
               <h3 class="mb-3">Gift for Birthday</h3>
               <p class="text-muted mb-0">There will be description here.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
+              <i class="fas fa-4x fa-home text-primary mb-3 sr-icon-3"></i>
               <h3 class="mb-3">Decor your room</h3>
               <p class="text-muted mb-0">There will be description here.</p>
             </div>

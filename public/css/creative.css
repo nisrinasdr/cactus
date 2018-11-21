@@ -25,22 +25,16 @@ hr.light {
 }
 
 
-#cart {
-  color: rgba(255, 255, 255, 0.7);
-  padding: 20px;
-}
 
-#cart:hover {
+
+#cart.navbar-shrink .navbar-brand {
   color: black;
 }
-
-#search {
-  color: rgba(255, 255, 255, 0.7);
+#cart.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
+  color: #fff
 }
-
-#search:hover {
-  color: black;
-}
+#search.navbar-shrink .navbar-brand {
+  color: black;}
 
 hr.green {
   border-color: #525a4a;
@@ -200,10 +194,12 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../img/header.jpg");
+  background-image: url("../img/cactus.jpg");
   background-position: center center;
   background-size: cover;
 }
+
+
 
 header.masthead hr {
   margin-top: 30px;
