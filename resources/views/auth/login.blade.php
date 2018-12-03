@@ -1,12 +1,44 @@
-@extends('app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cactusmhi</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top" background="url(../img/header.jpg)">
+	<a href="/">
+		<i class="fas fa-3x fa-times text-primary"></i>
+	</a>
+<div class="text-center" style="padding:50px 0">
+    
+	<div class="logo col-lg-10 mx-auto" >
+      <h1 class="text-uppercase"><strong>login</strong><h1>
+	</div>
+				
+	<!-- Main Form -->
+	<div class="login-form-1">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
 							<strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -17,47 +49,39 @@
 							</ul>
 						</div>
 					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="/auth/login">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary" style="margin-right: 15px;">
-									Login
-								</button>
-
-								<a href="/password/email">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
+		<form role="form" method="POST" action="/auth/login" id="login-form" class="text-left">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<div class="login-form-main-message"></div>
+			<div class="main-login-form">
+				<div class="login-group">
+					<div class="form-group">
+						<label for="lg_username" class="sr-only">E-mail</label>
+						<input type="text" class="form-control" id="lg_email" name="email" value="{{ old('email') }}" placeholder="E-mail">
+					</div>
+					<div class="form-group">
+						<label for="lg_password" class="sr-only">Password</label>
+						<input type="password" class="form-control" id="lg_password" name="password" placeholder="Password">
+					</div>
+					<div class="form-group login-group-checkbox">
+						<input type="checkbox" id="lg_remember" name="lg_remember">
+						<label for="lg_remember">remember</label>
+					</div>
 				</div>
+				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 			</div>
-		</div>
+			<div class="etc-login-form">
+				<p>forgot your password? <a href="/password/email">click here</a></p>
+				<p>new user? <a href="/register">create new account</a></p>
+			</div>
+		</form>
 	</div>
+	<!-- end:Main Form -->
+ </div>
+
+
+
+
 </div>
-@endsection
+
+  </body>
+</html>

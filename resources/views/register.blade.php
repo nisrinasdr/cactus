@@ -27,40 +27,51 @@
 
   </head>
 	<body>
-	<a href="/cactus/public">
+	<a href="/">
   <i class="fas fa-3x fa-times text-primary"></i></a>
   <div class="text-center" style="padding:5px 0">
     
   <div class="logo col-lg-10 mx-auto" >
       <h1 class="text-uppercase"><strong>Register</strong><h1>
-  </div>
+	</div>
+			
 <!-- REGISTRATION FORM -->
 
 	<!-- Main Form -->
 	<div class="login-form-1">
-		<form id="register-form" class="text-left">
+					@if (count($errors) > 0)
+						<div class="alert alert-danger">
+							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<ul>
+								@foreach ($errors->all() as $error)
+									<li>{{ $error }}</li>
+								@endforeach
+							</ul>
+						</div>
+					@endif
+		<form role="form" method="POST" action="/auth/register" id="register-form" class="text-left">
+		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="login-form-main-message"></div>
 			<div class="main-login-form">
 				<div class="login-group">
 					<div class="form-group">
-						<label for="reg_email" class="sr-only">Email address</label>
-						<input type="text" class="form-control" id="reg_email" name="reg_email" placeholder="E-mail">
+						<label for="name" class="sr-only">Full Name</label>
+						<input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ old('name') }}">
 					</div>
 					<div class="form-group">
-						<label for="reg_password" class="sr-only">Password</label>
-						<input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="Password">
+						<label for="email" class="sr-only">Email address</label>
+						<input type="text" class="form-control" id="email" name="email" placeholder="E-mail" value="{{ old('email') }}">
 					</div>
 					<div class="form-group">
-						<label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-						<input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="Confirm password">
+						<label for="password" class="sr-only">Password</label>
+						<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+					</div>
+					<div class="form-group">
+						<label for="confirmation" class="sr-only">Password Confirm</label>
+						<input type="password" class="form-control" id="confirmation" name="confirmation" placeholder="Confirm password">
 					</div>
 					
 
-					<div class="form-group">
-						<label for="reg_fullname" class="sr-only">Full Name</label>
-						<input type="text" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="Name">
-					</div>
-					
 					
 					<div class="form-group login-group-checkbox">
 						<input type="checkbox" class="" id="reg_agree" name="reg_agree">
@@ -70,7 +81,7 @@
 				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 			</div>
 			<div class="etc-login-form">
-				<p>already have an account? <a href="login">login here</a></p>
+				<p>already have an account? <a href="/login">login here</a></p>
 			</div>
 		</form>
 	</div>
@@ -85,4 +96,3 @@
 
   </body>
 </html>
-

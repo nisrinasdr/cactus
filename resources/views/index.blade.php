@@ -31,7 +31,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="navbar-toggler-right">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">Cactusmhi</a>
+    <a class="navbar-brand js-scroll-trigger" href="/">Cactusmhi</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,9 +39,18 @@
 
   <div class="collapse navbar-collapse flex-column" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="login">Login</a>
-            </li>
+            @if (Auth::guest())
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="/login">Login</a>
+						</li>
+			@else
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="/auth/logout">Logout</a></li>
+							</ul>
+						</li>
+			@endif
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </li>

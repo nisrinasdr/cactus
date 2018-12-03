@@ -28,16 +28,29 @@
   </head>
 
   <body id="page-top" background="url(../img/header.jpg)">
-  <a href="/cactus/public">
-  <i class="fas fa-3x fa-times text-primary"></i></a>
-  <div class="text-center" style="padding:50px 0">
+	<a href="/">
+		<i class="fas fa-3x fa-times text-primary"></i>
+	</a>
+<div class="text-center" style="padding:50px 0">
     
-  <div class="logo col-lg-10 mx-auto" >
+	<div class="logo col-lg-10 mx-auto" >
       <h1 class="text-uppercase"><strong>login</strong><h1>
-  </div>
+	</div>
+				
 	<!-- Main Form -->
 	<div class="login-form-1">
-		<form id="login-form" class="text-left">
+					@if (count($errors) > 0)
+						<div class="alert alert-danger">
+							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<ul>
+								@foreach ($errors->all() as $error)
+									<li>{{ $error }}</li>
+								@endforeach
+							</ul>
+						</div>
+					@endif
+		<form role="form" method="POST" action="/auth/login" id="login-form" class="text-left">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="login-form-main-message"></div>
 			<div class="main-login-form">
 				<div class="login-group">
@@ -57,13 +70,13 @@
 				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 			</div>
 			<div class="etc-login-form">
-				<p>forgot your password? <a href="#">click here</a></p>
-				<p>new user? <a href="register">create new account</a></p>
+				<p>forgot your password? <a href="/password/email">click here</a></p>
+				<p>new user? <a href="/register">create new account</a></p>
 			</div>
 		</form>
 	</div>
 	<!-- end:Main Form -->
-</div>
+ </div>
 
 
 
@@ -72,4 +85,3 @@
 
   </body>
 </html>
-
