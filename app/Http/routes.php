@@ -25,6 +25,10 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('/product', function () {
+    return view('product');
+});
+
 Route::get('/register', function () {
     return view('register');
 });
