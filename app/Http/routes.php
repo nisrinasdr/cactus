@@ -36,6 +36,11 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/shoping-cart', function () {
+    return view('shoping-cart');
+});
+
 Route::get('/admin', function () {
     return view('admin');
     // return view('welcome');
@@ -46,3 +51,4 @@ Route::get('/logout', 'Auth\AuthController@getLogout');
 Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
 Route::post('/admin ', 'Auth\AuthController@postAdmin');
+Route::post('/shoping-cart ', 'Auth\AuthController@postShoping-cart');
