@@ -75,6 +75,7 @@
 						<select class="form-control" name="admin">
 							<option>-- Pilih Hak Akses --</option>
 							<option value="0">User</option>
+							<option value="1">Admin</option>
 						</select>
 					</div>
 

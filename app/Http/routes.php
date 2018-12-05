@@ -50,10 +50,19 @@ Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout'); 
 Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
-<<<<<<< HEAD
 
-
-=======
-Route::post('/admin ', 'Auth\AuthController@postAdmin');
 Route::post('/shoping-cart ', 'Auth\AuthController@postShoping-cart');
->>>>>>> 40b3de03978ad5d30572c06e60bc16e9ef3345b3
+Route::group(['middleware' => ['auth']], function()
+{
+	Route::get('/home','HomeController@index');
+	Route::get('admin',function(){
+		if(Auth::user()->admin==1){
+			return view('admin');
+		}else{
+			return view('index');
+	}
+	});
+});
+Route::get('admin', ['middleware' => ['auth','admin'],function (){
+	return view('admin');
+}]);	

@@ -50,11 +50,17 @@
 								<li><a href="/auth/logout">Logout</a></li>
 							</ul>
 						</li>
-			@endif
+			
+				
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/shoping-cart" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+              @if (Auth::user()-> admin == 1)
+				  <a class="nav-link js-scroll-trigger" href="/admin">Dashboard</a>
+			  @else
+				  <a class="nav-link js-scroll-trigger" href="/shoping-cart" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </li>
-            <li class="nav-item">
+			  @endif
+            @endif
+			<li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#" id="search"><i class="fa fa-search" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
