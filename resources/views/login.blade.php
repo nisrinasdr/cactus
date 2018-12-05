@@ -27,7 +27,7 @@
 
   </head>
 
-  <body id="page-top" background="url(../img/header.jpg)">
+  <body id="page-top">
 	<a href="/">
 		<i class="fas fa-3x fa-times text-primary"></i>
 	</a>

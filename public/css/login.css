@@ -3,9 +3,9 @@ html, body{
     height: 100%;
     background-color: #F9B2A0;
     padding: 4%;
-    background-image: url("../img/kaktuuus.png");
- background-position: center center;
-  background-size: cover;
+    background-image: url("../img/login.jpg");
+    background-position: center center;
+    background-size: cover;
 }
 
 body {

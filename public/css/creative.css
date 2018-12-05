@@ -25,7 +25,12 @@ hr.light {
 }
 
 
+#footer {
 
+  background-color: #525a4a;
+  color: black;
+  text-align: center;
+}
 
 #cart.navbar-shrink .navbar-brand {
   color: black;
@@ -194,17 +199,17 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../img/cactus.jpg");
+  background-image: url("../img/head1.png");
   background-position: center center;
   background-size: cover;
 }
-
-
 
 header.masthead hr {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+
 
 header.masthead h1 {
   font-size: 2rem;
@@ -220,6 +225,31 @@ header.masthead p {
   }
 }
 
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+.carousel,
+.item,
+.active {
+    height: 100%;
+    margin-bottom: 60px;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
 @media (min-width: 992px) {
   header.masthead {
     height: 100vh;

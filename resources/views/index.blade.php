@@ -23,6 +23,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/creative.css" rel="stylesheet">
+    <script type="text/javascript" src="{{URL::asset('assets/js/jquery.min.js')}}"></script>
 
   </head>
 
@@ -85,22 +86,22 @@
     
 
     <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
+     <div class="container my-auto">
         <div class="row">
-          <div class="col-lg-10 mx-auto">
+         <!-- <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
               <strong>The world is full of cactus, but we don't have to sit on it.</strong>
             </h1>
-            <h3>--Will Fohey</h3>
             <hr class="green">
           </div>
           <div class="col-lg-8 mx-auto">
-           <!-- <p class="text-faded mb-5">Perfect Gift for The One You Love.</p> -->
+           <p class="text-faded mb-5">Perfect Gift for The One You Love.</p>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">What's Cactusmhi?</a>
-          </div>
+          </div> -->
         </div>
       </div>
-    </header>
+</header> 
+
 
   <!--  <section class="bg-primary" id="about">
       <div class="container">
@@ -277,6 +278,80 @@
         </div>
       </div>
     </section> -->
+        <!-- Footer -->
+<footer class="page-footer font-small indigo" id="footer" style="padding:2% 0">
+
+<!-- Footer Links -->
+<div class="container">
+
+ 
+
+  <!-- Grid row-->
+  <div class="row d-flex text-center justify-content-center mb-md-0 mb-4" >
+
+    <!-- Grid column
+    <div class="col-md-8 col-12 mt-5">
+      <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+    </div>
+    Grid column -->
+
+  </div>
+  <!-- Grid row-->
+  <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+  <!-- Grid row-->
+  <div class="row pb-3">
+
+    <!-- Grid column -->
+    <div class="col-md-12">
+
+      <div class="flex-center">
+
+        <!-- Facebook -->
+        <a class="fb-ic">
+        <i class="fab fa-facebook-f mr-4"> </i>
+        </a>
+        <!-- Twitter -->
+        <a class="tw-ic">
+          <i class="fab fa-twitter  mr-4"> </i>
+        </a>
+        <!-- Google +-->
+        <a class="gplus-ic">
+          <i class="fab fa-google-plus mr-4"> </i>
+        </a>
+        <!--Linkedin -->
+        <a class="li-ic">
+          <i class="fab fa-linkedin mr-4"> </i>
+        </a>
+        <!--Instagram-->
+        <a class="ins-ic">
+          <i class="fab fa-instagram mr-4"> </i>
+        </a>
+        <!--Pinterest-->
+        <a class="pin-ic">
+          <i class="fab fa-pinterest"> </i>
+        </a>
+
+      </div>
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row-->
+
+</div>
+<!-- Footer Links -->
+
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3"><font color="white">© 2018 Copyright: Cactushmi</font>
+</div>
+<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -289,6 +364,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
+
 
   </body>
 
