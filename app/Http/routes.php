@@ -36,6 +36,11 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/shoping-cart', function () {
+    return view('shoping-cart');
+});
+
 Route::get('/admin', function () {
     return view('admin');
     // return view('welcome');
@@ -45,4 +50,19 @@ Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout'); 
 Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
-Route::post('/admin ', 'Auth\AuthController@postAdmin');
+
+Route::post('/shoping-cart ', 'Auth\AuthController@postShoping-cart');
+Route::group(['middleware' => ['auth']], function()
+{
+	Route::get('/home','HomeController@index');
+	Route::get('admin',function(){
+		if(Auth::user()->admin==1){
+			return view('admin');
+		}else{
+			return view('index');
+	}
+	});
+});
+Route::get('admin', ['middleware' => ['auth','admin'],function (){
+	return view('admin');
+}]);	
