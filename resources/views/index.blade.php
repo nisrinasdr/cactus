@@ -52,7 +52,7 @@
 						</li>
 			@endif
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+              <a class="nav-link js-scroll-trigger" href="/shoping-cart" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#" id="search"><i class="fa fa-search" aria-hidden="true"></i></a>
@@ -66,7 +66,7 @@
 
     <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Products</a>
+              <a class="nav-link js-scroll-trigger" href="/product">Products</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#">Story</a>

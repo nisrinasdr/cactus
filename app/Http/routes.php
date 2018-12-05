@@ -25,6 +25,10 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('/product', function () {
+    return view('product');
+});
+
 Route::get('/register', function () {
     return view('register');
 });
@@ -32,12 +36,24 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/shoping-cart', function () {
+    return view('shoping-cart');
+});
+
+Route::get('/admin', function () {
+    return view('admin');
+    // return view('welcome');
+});
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout'); 
 Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
+<<<<<<< HEAD
 
-Route::get('/admin', function () {
-    return view('admin');
-});
+
+=======
+Route::post('/admin ', 'Auth\AuthController@postAdmin');
+Route::post('/shoping-cart ', 'Auth\AuthController@postShoping-cart');
+>>>>>>> 40b3de03978ad5d30572c06e60bc16e9ef3345b3
