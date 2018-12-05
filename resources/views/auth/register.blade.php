@@ -70,6 +70,13 @@
 						<label for="confirmation" class="sr-only">Password Confirm</label>
 						<input type="password" class="form-control" id="confirmation" name="password_confirmation" placeholder="Confirm password">
 					</div>
+					<div class="form-group">
+						<label class="sr-only">Privileges</label>
+						<select class="form-control" name="admin">
+							<option>-- Pilih Hak Akses --</option>
+							<option value="0">User</option>
+						</select>
+					</div>
 					
 
 					
