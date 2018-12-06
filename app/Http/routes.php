@@ -40,7 +40,9 @@ Route::get('/login', function () {
 Route::get('/shoping-cart', function () {
     return view('shoping-cart');
 });
-
+Route::get('/produk', function () {
+    return view('produk');
+});
 Route::get('/admin', function () {
     return view('admin');
     // return view('welcome');
@@ -62,6 +64,8 @@ Route::group(['middleware' => ['auth']], function()
 			return view('index');
 	}
 	});
+	Route::resource('product','ProductController');
+	Route::resource('category','CategoriesController');
 });
 Route::get('admin', ['middleware' => ['auth','admin'],function (){
 	return view('admin');

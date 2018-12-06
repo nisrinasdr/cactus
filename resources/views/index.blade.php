@@ -73,7 +73,7 @@
 
     <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/product">Products</a>
+              <a class="nav-link js-scroll-trigger" href="/produk">Products</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#">Story</a>
