@@ -17,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products=Product::all();
+        return view('product.index',compact('products'));
     }
 
     /**
@@ -39,7 +40,24 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formInput=$request->except('image');
+
+        //        validation
+        $this->validate($request,[
+            'name'=>'required',
+            'price'=>'required',
+            'image'=>'image|mimes:png,jpg,jpeg|max:100000'
+        ]);
+
+        $image=$request->image;
+        if($image){
+            $imageName=$image->getClientOriginalName();
+            $image->move('images',$imageName);
+            $formInput['image']=$imageName;
+        }
+
+        Product::create($formInput);
+        return view('admin');
     }
 
     /**

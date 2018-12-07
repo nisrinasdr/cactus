@@ -17,9 +17,13 @@
                 {!! Form::label('description', 'Description') !!}
                 {!! Form::text('description', null, array('class' => 'form-control')) !!}
             </div>
+            <div class="form-group">
+                {!! Form::label('price', 'Price') !!}
+                {!! Form::text('price', null, array('class' => 'form-control')) !!}
+            </div>
 			<div class="form-group">
                 {!! Form::label('category_id', 'Categories') !!}
-                {!! Form::select('category_id', $categories, null, ['class' => 'form-control','placeholder'=>'Select Category']) !!}
+                {!! Form::select('category_id',[1=>'Cactus'], null, ['class' => 'form-control','prepend' => 'Please Select']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('image', 'Image') !!}

@@ -76,7 +76,7 @@
                 </a>
                 <!-- Sub menu -->
                 <ul>
-                    <li><a href="#">Products</a></li>
+                    <li><a href="{{route('product.index')}}">Products</a></li>
                     <li><a href="/product/create">Add Product</a></li>
                 </ul>
             </li>

@@ -11,14 +11,11 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'FrontController@index')->name('home');
 
 Route::get('home', 'HomeController@index');
+Route::get('/produks', 'FrontController@produks')->name('produks');
 
-
-Route::get('/', function () {
-    return view('index');
-});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -40,13 +37,11 @@ Route::get('/login', function () {
 Route::get('/shoping-cart', function () {
     return view('shoping-cart');
 });
-Route::get('/produk', function () {
-    return view('produk');
-});
+
 Route::get('/admin', function () {
     return view('admin');
     // return view('welcome');
-});
+})->name('admin.index');
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout'); 
@@ -54,6 +49,7 @@ Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
 
 Route::post('/shoping-cart ', 'Auth\AuthController@postShoping-cart');
+
 Route::group(['middleware' => ['auth']], function()
 {
 	Route::get('/home','HomeController@index');
