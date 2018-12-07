@@ -23,6 +23,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/products.css" rel="stylesheet">
+    <link href="css/detail.css" rel="stylesheet">
 
   </head>
 
