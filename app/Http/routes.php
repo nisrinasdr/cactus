@@ -26,6 +26,10 @@ Route::get('/product', function () {
     return view('product');
 });
 
+Route::get('/detail', function () {
+    return view('detail');
+});
+
 Route::get('/register', function () {
     return view('register');
 });
