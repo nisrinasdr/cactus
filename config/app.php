@@ -137,6 +137,7 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 
 		'Illuminate\Html\HtmlServiceProvider',
+		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
 		
 		/*
 		 * Application Service Providers...
@@ -196,6 +197,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 	'Html' 		=> 'Illuminate\Html\HtmlFacade',
 	'Form' 		=> 'Illuminate\Html\FormFacade',
+	'Cart' => 'Gloudemans\Shoppingcart\Facades\Cart',
 	],
 
 ];

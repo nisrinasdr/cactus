@@ -55,13 +55,15 @@
                 @if (Auth::user()-> admin == 1)
                   <a class="nav-link js-scroll-trigger" href="/admin">Dashboard</a>
                 @else
-                  <a class="nav-link js-scroll-trigger" href="/shoping-cart" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                  <a class="nav-link js-scroll-trigger" href="{{route('cart.index')}}" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </li>
                 @endif
             @endif
 
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/shoping-cart" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+              <a class="nav-link js-scroll-trigger" href="{{route('cart.index')}}" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span class="alert badge"> {{Cart::count()}} </span>
+              </a>
             </li>
             <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#" id="search"><i class="fa fa-search" aria-hidden="true"></i></a>
@@ -75,7 +77,7 @@
 
     <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Products</a>
+              <a class="nav-link js-scroll-trigger" href="/produk">Products</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#">Story</a>
@@ -142,14 +144,20 @@
           <div class="row">
             @forelse($produks as $produk)
             <div class="col-lg-4 col-md-6 mb-4">
+            <div class="item-wrapper">
+              <div class="img-wrapper">
                 
                  <a href="#"> <img class="card-img-top" src="{{url('images',$produk->image)}}" /></a>
-                  
+                <a href="{{route('cart.edit',$produk->id)}}" class="button  expanded">Add to Cart
+
+                </a>
+              </div>  
+              </div>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">{{$produk->name}}</a>
                   </h4>
-                  <h5> Rp{{$produk->price}}</h5>
+                  <h5> Rp {{$produk->price}}</h5>
                   <p class="card-text">{{$produk->description}}</p>
                 </div>
                 <div class="card-footer">

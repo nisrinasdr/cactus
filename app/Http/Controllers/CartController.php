@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Category;
-use App\Product;
+
 use Illuminate\Http\Request;
+use App\Product;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ProductController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +18,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products=Product::all();
-        return view('product.index',compact('products'));
+        $cartItems=Cart::content();
+        return view('shoping-cart',compact('cartItems'));
     }
 
     /**
@@ -28,8 +29,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-		$categories=Category::lists('name','id');
-        return view('product.create',compact('id','categories'));
+        
+
     }
 
     /**
@@ -40,24 +41,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $formInput=$request->except('image');
-
-        //        validation
-        $this->validate($request,[
-            'name'=>'required',
-            'price'=>'required',
-            'image'=>'image|mimes:png,jpg,jpeg|max:100000'
-        ]);
-
-        $image=$request->image;
-        if($image){
-            $imageName=$image->getClientOriginalName();
-            $image->move('images',$imageName);
-            $formInput['image']=$imageName;
-        }
-
-        Product::create($formInput);
-        return view('product');
+        //
     }
 
     /**
@@ -79,7 +63,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product=Product::find($id);
+
+        Cart::add($id,$product->name,1,$product->price);
+        return back();
     }
 
     /**
@@ -91,7 +78,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Cart::update($id,$request->qty);
+        return back();
     }
 
     /**

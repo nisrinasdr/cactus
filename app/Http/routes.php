@@ -15,7 +15,7 @@ Route::get('/', 'FrontController@index')->name('home');
 
 Route::get('home', 'HomeController@index');
 Route::get('/produks', 'FrontController@produks')->name('produks');
-
+Route::resource('/cart', 'CartController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -38,9 +38,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/shoping-cart', function () {
-    return view('shoping-cart');
-});
+
 
 Route::get('/admin', function () {
     return view('admin');

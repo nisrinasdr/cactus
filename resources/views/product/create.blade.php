@@ -10,7 +10,7 @@
 			
 			<div class="form-group">
                 {!! Form::label('name', 'Name') !!}
-                {!! Form::text('name', null, array('class' => 'form-control')) !!}
+                {!! Form::text('name', null, array('class' => 'form-control','required'=>'')) !!}
             </div>
 
             <div class="form-group">
@@ -22,9 +22,9 @@
                 {!! Form::text('price', null, array('class' => 'form-control')) !!}
             </div>
 			<div class="form-group">
-
+              
                 {!! Form::label('category_id', 'Categories') !!}
-                {!! Form::select('category_id',$categories, null, ['class' => 'form-control','placeholder' => 'Please Select']) !!}
+                {!! Form::select('category_id', $categories, null, array('class' => 'form-control','placeholder' => 'Select Category')) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('image', 'Image') !!}
