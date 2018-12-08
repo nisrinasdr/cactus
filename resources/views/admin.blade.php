@@ -87,7 +87,7 @@
                 </a>
                 <!-- Sub menu -->
                 <ul>
-                    <li><a href="#">Add Category</a></li>
+                    <li><a href="/category">Add Category</a></li>
                 </ul>
             </li>
             <li class="submenu">
