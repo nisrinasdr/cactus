@@ -50,22 +50,13 @@
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="/auth/logout">Logout</a></li>
 							</ul>
-						</li>
+						</li>@endif
 			     <li class="nav-item">
-                @if (Auth::user()-> admin == 1)
-                  <a class="nav-link js-scroll-trigger" href="/admin">Dashboard</a>
-                @else
-                  <a class="nav-link js-scroll-trigger" href="{{route('cart.index')}}" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                  <a class="nav-link js-scroll-trigger" href="{{route('cart.index')}}" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="alert badge"> {{Cart::count()}} </span>
+                  </a>
             </li>
-                @endif
-            @endif
+            
 
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{route('cart.index')}}" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                <span class="alert badge"> {{Cart::count()}} </span>
-              </a>
-            </li>
-            <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#" id="search"><i class="fa fa-search" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
@@ -148,7 +139,7 @@
               <div class="img-wrapper">
                 
                  <a href="#"> <img class="card-img-top" src="{{url('images',$produk->image)}}" /></a>
-                <a href="{{route('cart.edit',$produk->id)}}" class="button  expanded">Add to Cart
+                <a href="{{route('cart.addItem',$produk->id)}}" class="button  expanded">Add to Cart
 
                 </a>
               </div>  

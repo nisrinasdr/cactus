@@ -16,7 +16,7 @@ Route::get('/', 'FrontController@index')->name('home');
 Route::get('home', 'HomeController@index');
 Route::get('/produks', 'FrontController@produks')->name('produks');
 Route::resource('/cart', 'CartController');
-
+Route::get('/cart/add-item/{id}', 'CartController@addItem')->name('cart.addItem');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
@@ -38,7 +38,9 @@ Route::get('/login', function () {
     return view('login');
 });
 
-
+Route::get('/password', function () {
+    return view('password');
+});
 
 Route::get('/admin', function () {
     return view('admin');
@@ -64,7 +66,13 @@ Route::group(['middleware' => ['auth']], function()
 	});
 	Route::resource('product','ProductController');
 	Route::resource('category','CategoriesController');
+	
 });
 Route::get('admin', ['middleware' => ['auth','admin'],function (){
 	return view('admin');
 }]);	
+
+Route::resource('address','AddressController');
+Route::get('checkout','CheckoutController@step1');
+Route::get('shipping-info','CheckoutController@shipping')->name('checkout.shipping');
+Route::get('payment','CheckoutController@payment')->name('checkout.payment');

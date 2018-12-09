@@ -57,7 +57,8 @@
               @if (Auth::user()-> admin == 1)
 				  <a class="nav-link js-scroll-trigger" href="/admin">Dashboard</a>
 			  @else
-				  <a class="nav-link js-scroll-trigger" href="/shoping-cart" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+				  <a class="nav-link js-scroll-trigger" href="{{route('cart.index')}}" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="alert badge"> {{Cart::count()}} </span>
+          </a>
             </li>
 			  @endif
             @endif

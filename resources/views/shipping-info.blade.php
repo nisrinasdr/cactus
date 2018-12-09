@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shoping Cart</title>
+	<title>Shipping Info</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -97,72 +97,48 @@
   </div>
 
 </nav>
+<div class="container">
+<div class="row">
+    <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+        <br>
+        <h3>Shipping Info</h3>
+
+        {!! Form::open(['route' => 'address.store', 'method' => 'post']) !!}
+
+        <div class="form-group">
+            {!! Form::label('addressline', 'Address Line') !!}
+            {!! Form::text('addressline', null, array('class' => 'form-control')) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('city', 'City') !!}
+            {!! Form::text('city', null, array('class' => 'form-control')) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('state', 'State') !!}
+            {!! Form::text('state', null, array('class' => 'form-control')) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('zip', 'Zip') !!}
+            {!! Form::text('zip', null, array('class' => 'form-control')) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('country', 'Country') !!}
+            {!! Form::text('country', null, array('class' => 'form-control')) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('phone', 'Phone') !!}
+            {!! Form::text('phone', null, array('class' => 'form-control')) !!}
+        </div>
+
+        {!! Form::submit('Proceed to Payment', array('class' => 'button success')) !!}
+        {!! Form::close() !!}
+    </div>
 
 
-	<!-- Shoping Cart -->
-	<br>
-	<h3>Shoping Cart</h3>
-	<br>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
-					<div class="m-l-25 m-r--38 m-lr-0-xl">
-						<div class="wrap-table-shopping-cart">
-							<table class="table-shopping-cart">
-								<tr class="table_head">
-									<th class="column-1">Product</th>
-									
-									<th class="column-2">Price</th>
-									<th class="column-3">Quantity</th>
-									<th class="column-4">Total</th>
-									<th class="column-5"> Action</th>
-								</tr>
-								@foreach($cartItems as $cartItem)
-								<tr class="table_row">
-									
-									<td class="column-1">{{$cartItem->name}}
-									</td>
-									
-									<td class="column-2">{{$cartItem->price}}</td>
-									<td class="column-3">
-											
-									{!! Form::open(['route' => ['cart.update',$cartItem->rowId],'method' => 'PUT']) !!}
-									<div class="bor8 bg0 m-b-22">
-									<input name="qty" class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" value="{{$cartItem->qty}}">
-									</div>
-									<input type="submit" class="btn btn-sm btn-default" value="Ok">
-									{!! Form::close() !!}
-									</td>
+</div>
+</div>
 
-
-									<td class="column-4">{{Cart::total()}}</td>
-									<td class="column-5">
-										<form action="{{route('cart.destroy',$cartItem->rowId)}}" method="POST">
-										{{csrf_field()}}
-										{{method_field('DELETE')}}
-										<input class="btn btn-sm btn-default" type="submit" value="Delete">
-										</form>
-									</td>
-								</tr>@endforeach
-							</table>
-						</div>
-
-						<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
-
-							<div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10"> <a href="/checkout">
-								Check out </a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				
-			</div>
-		</div>
-	
-		
-	
-		
 
 	<footer class="page-footer font-small indigo" id="footer" style="padding:2% 0">
 
@@ -248,6 +224,7 @@
 					</a>
 				</div>
 </div>
+
 <!-- Footer Links -->
 
 <!-- Copyright -->

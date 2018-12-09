@@ -28,17 +28,23 @@
   </head>
 
   <body id="page-top" background="url(../img/header.jpg)">
-	<a href="/">
+	<a href="/login">
 		<i class="fas fa-3x fa-times text-primary"></i>
 	</a>
 <div class="text-center" style="padding:50px 0">
     
 	<div class="logo col-lg-10 mx-auto" >
-      <h1 class="text-uppercase"><strong>login</strong><h1>
+      <h1 class="text-uppercase"><strong>Reset Password</strong><h1>
 	</div>
-				
-	<!-- Main Form -->
-	<div class="login-form-1">
+
+<div class="login-form-1">
+
+					@if (session('status'))
+						<div class="alert alert-success">
+							{{ session('status') }}
+						</div>
+					@endif
+
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
 							<strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -49,36 +55,29 @@
 							</ul>
 						</div>
 					@endif
-		<form role="form" method="POST" action="/auth/login" id="login-form" class="text-left">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<div class="login-form-main-message"></div>
+
+					<form class="text-left" role="form" method="POST" action="/password/email">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<div class="login-form-main-message"></div>
 			<div class="main-login-form">
 				<div class="login-group">
-					<div class="form-group">
-						<label for="lg_username" class="sr-only">E-mail</label>
-						<input type="text" class="form-control" id="lg_email" name="email" value="{{ old('email') }}" placeholder="E-mail">
-					</div>
-					<div class="form-group">
-						<label for="lg_password" class="sr-only">Password</label>
-						<input type="password" class="form-control" id="lg_password" name="password" placeholder="Password">
-					</div>
-					<div class="form-group login-group-checkbox">
-						<input type="checkbox" id="lg_remember" name="remember">
-						<label for="lg_remember">remember</label>
-					</div>
+						<div class="form-group">
+							<label class="sr-only">E-Mail Address</label>
+							
+								<input type="email" class="form-control" name="email" placeholder="E-mail" value="{{ old('email') }}">
+						</div>
+
+					</div>	<br>
+					<button type="submit" class="btn btn-primary"><i class="fa fa-chevron-right"></i>
+									Send Password Reset Link
+								</button>
 				</div>
-				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+					</form>
+				</div>
 			</div>
-			<div class="etc-login-form">
-				<p>forgot your password? <a href="/password">click here</a></p>
-				<p>new user? <a href="/register">create new account</a></p>
-			</div>
-		</form>
+		</div>
 	</div>
-	<!-- end:Main Form -->
- </div>
-
-
+</div>
 
 
 </div>
